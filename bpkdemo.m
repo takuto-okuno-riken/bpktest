@@ -28,4 +28,13 @@ function bpkdemo
     % bpk test (p-value should be bigger than 0.05)
     [p, lm] = bpktest(r, x);
     figure; scatter(x1,y); title(['bpk test p=' num2str(p)]);
+
+%{
+    % faster version (separated residuals)
+    [~, ~, perm, RiQ, dR2i] = regressPrepare(x);
+    r2 = r.*r;  % squared residuals
+    [~,~,~,~,~,~,~,rsq] = regressLinear(r2, x, [], [], perm, RiQ, dR2i);
+    lm = size(x,1) * rsq;
+    p2 = 1 - chi2cdf(lm, size(x,2)-1);
+%}
 end
