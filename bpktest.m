@@ -3,8 +3,8 @@
 % https://en.wikipedia.org/wiki/Breusch%E2%80%93Pagan_test
 % https://jp.mathworks.com/matlabcentral/fileexchange/24722-heteroskedasticity-test
 % input:
+%  r       residuals of regression (observations x 1)
 %  X       observations x regressors matrix (this should include intercept)
-%  r       residuals of regression
 
 function [pval, lm] = bpktest(r, X)
     r2 = r.*r;  % squared residuals
