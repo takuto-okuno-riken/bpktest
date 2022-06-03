@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
+
 # Heteroskedasticity test
 
 Heteroskedasticity test based on Koenker (Breush-Pagan) (Breush-Pagan 1979; Koenker 1981).
